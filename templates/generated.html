@@ -1,0 +1,47 @@
+$def with(handle, tweet, err_stat)
+
+<!DOCTYPE html>
+	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119269866-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-119269866-1');
+		</script>
+		<link href="https://fonts.googleapis.com/css?family=Roboto|Pangolin" rel="stylesheet">
+		<link href="static/style.css" rel="stylesheet">
+		<title>${handle} says...</title>
+ 	</head>
+	<body>
+		$if err_stat == 0:
+			<p class="tweepy_error">oopsie! iS yOUr AcCoUNt pRiVaTE?</p>
+			<img src="static/img/sponge.jpg">
+			<p class="message">Unfortunately, we do not yet support generating tweets for private accounts. Check back later, or have fun seeing what your friends' generated tweets sound like! If the account is not private, please ensure you entered a valid Twitter handle.</p>
+		$elif err_stat == 2:
+			<p class="tweepy_error">oopsie! do U EvEN twEeT?</p>
+			<img src="static/img/sponge.jpg">
+			<p class="message">We're having some trouble learning from your tweets. We reccommend at least 100 tweets in order to generate new ones the best we can! If you have plenty of tweets and are still seeing this error: you shouldn't be. Try again, I guess.</p>
+		$else:
+			<div style="text-align: center;">
+				<h2 class="says">@$handle says...</h2>
+				<h3 class="tweet">$tweet</h3>
+
+				<table align="center">
+					<tr>
+						<td>
+							<a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=${tweet}%20%2F%2F%20generated%20with:&url=https%3A%2F%2Ftweetsim%2Eherokuapp%2Ecom">Tweet</a>
+							<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+						</td>
+						<td>
+							<form name="main" method="POST" class="forms">
+								<input type="submit" value="Generate another!"/>
+							</form>
+						</td>
+					</tr>
+				</table>
+			</div>
+	</body>
+</html>

@@ -1,0 +1,4 @@
+web.py==0.39
+tweepy==3.6.0
+PyMySQL==0.8.1
+SQLAlchemy==1.2.1

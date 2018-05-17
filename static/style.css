@@ -1,0 +1,73 @@
+body {
+	background-color: #eeeeee;
+	text-align: center; 
+}
+
+a {
+	color: black;
+}
+
+a:hover {
+	color: #0084b4;
+}
+
+table.center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.error {
+	font-family: sans-serif;
+	color: red;
+	font-style: italic;
+}
+
+.forms {
+	font-family: Roboto;
+	color: #0084b4;
+}
+
+.wrong {
+	color: red;
+	font-size: 0.75em;
+	font-style: italic;
+	font-family: sans-serif;
+}
+
+.says {
+	font-family: Roboto;
+	color: #0084b4;
+}
+
+.tweet {
+	font-family: Roboto;
+	text-indent: 0em;
+}
+
+.tweepy_error {
+	font-family: Pangolin;
+	color: red;
+	font-size: 2em;
+}
+
+.message {
+	font-family: Roboto;
+	color: red;
+	font-size: 1em;
+	font-style: italic;
+}
+
+#generate {
+	display:inline-block;
+}
+
+.twitter-share-button {
+	margin-right:10px;
+	display:inline-block;
+}
+
+.notice {
+	font-family: Roboto;
+	font-size: 0.75em;
+	font-style: italic;
+}

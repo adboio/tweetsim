@@ -1,0 +1,35 @@
+$def with(f)
+
+<!DOCTYPE html>
+	<head>
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<style>
+			.error {
+				font-family: sans-serif;
+				color: red;
+				font-style: italic;
+			}
+
+			.forms {
+				font-family: Roboto;
+				color: #0084b4;
+			}
+
+			.wrong {
+				color: red;
+				font-size: 0.75em;
+				font-style: italic;
+				font-family: sans-serif;
+			}
+		</style>
+	</head>
+	<body>
+		<form name="main" method="POST" class="forms">
+			$if not f.valid:
+				<p class="error">Error, try again</p>
+			$:f.render()
+			<input type="submit" value="Generate Tweet"/>
+		</form>
+	</body>
+</hmtl>
+
